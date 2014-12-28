@@ -8,6 +8,7 @@ What is the largest prime factor of the number 600851475143?
 """
 
 # prime factors 
+"""
 prime_factors = '2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59\
                  61 67 71 73 79 83 89 97 101 103 107 109 113 127 \
                  131 137 139 149 151 157 163 167 173 179 181 191 \
@@ -126,7 +127,16 @@ prime_factors = '2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59\
                  9803 9811 9817 9829 9833 9839 9851 9857 9859 9871\
                  9883 9887 9901 9907 9923 9929 9931 9941 9949 9967\
                  9973'.split()
+"""
+#def factoring(n): return [i for i in prime_factors if n % int(i) == 0][-1]
 
-def factoring(n): return [i for i in prime_factors if n % int(i) == 0][-1]
-
+# it's worked too
+def factoring(n):
+    if n <= 300000: rangen = n//2+1 
+    else: rangen = n//100000
+    divisors = [ d for d in range(2,rangen) if n % d == 0 ]
+    return [i for i in divisors if \
+            all(i % other_divisor != 0 for other_divisor in divisors if\
+            other_divisor != i)][-1] 
+    
 print factoring(600851475143)
