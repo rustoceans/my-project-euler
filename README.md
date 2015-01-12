@@ -1,4 +1,6 @@
 my-project-euler
 ================
 
-Exercises of line prompt at EulerPy.
+Exercises command line from [EulerPy].
+
+[EulerPy]: https://projecteuler.net/
