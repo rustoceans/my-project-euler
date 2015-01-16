@@ -16,28 +16,15 @@ hundred natural numbers and the square of the sum.
 """
 
 
-def _squares(number):
-    square_number = number ** 2
-    return square_number
+def find_difference(limit):
+    hundred = range(1, limit + 1)
+    squares_each = map(lambda x: x ** 2, hundred)
+    sum_squares = reduce(lambda x, y: x + y, squares_each)
 
+    sum_hundred = reduce(lambda a, b: a + b, hundred)
+    squares_hundred = sum_hundred ** 2
 
-def get_sum(extension):
-    sum_of = reduce(lambda a, b: a + b, extension)
-    return sum_of
-
-
-def find_difference(squares_hundred, sum_squares):
     find_difference = squares_hundred - sum_squares
     return find_difference
 
-
-def main(limit):
-    hundred = range(1, limit + 1)
-    squares_each = map(lambda x: x ** 2, hundred)
-    sum_squares = get_sum(squares_each)
-    sum_hundred = get_sum(hundred)
-    squares_hundred = _squares(sum_hundred)
-    return find_difference(squares_hundred, sum_squares)
-
-if __name__ == "__main__":
-    print main(100)
+print find_difference(100)
