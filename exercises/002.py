@@ -11,9 +11,10 @@ Find the sum of all the even-valued terms in the sequence which do not
 exceed four million.
 """
 
-fib = lambda n: 0 if n == 0 else 1 if n == 1 else fib(n-1) + fib(n-2)
+fib = lambda n: 0 if n == 0 else 1 if n == 1 else fib(n - 1) + fib(n - 2)
 
-print sum([fib(i) for i in range(2,35) if fib(i)%2 == 0 and fib(i) < 4000000])
+print sum([fib(i) for i in range(2, 35)
+           if fib(i) % 2 == 0 and fib(i) < 4000000])
 
 """
 Trick
