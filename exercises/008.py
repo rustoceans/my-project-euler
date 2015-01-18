@@ -48,19 +48,6 @@ milion_digits = "73167176531330624919225119674426574742355349194934\
                  84580156166097919133875499200524063689912560717606\
                  05886116467109405077541002256983155200055935729725\
                  71636269561882670428252483600823257530420752963450"
-"""
-mD_rspaces = milion_digits.replace(" ", "")
-
-
-product = 0
-greatest_product = 0
-for d in range(len(mD_rspaces)):
-    a = mD_rspaces[d:d + 13]
-    product = reduce(lambda x, y: x * y, [int(x) for x in a])
-    greatest_product = product if product > greatest_product else greatest_product
-    if len(a) != 13:
-        break
-"""
 
 
 def main(product, greatest_product, milion_digits):
