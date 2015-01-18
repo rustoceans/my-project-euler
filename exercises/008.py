@@ -51,4 +51,12 @@ milion_digits = "73167176531330624919225119674426574742355349194934\
 
 mD_rspaces = milion_digits.replace(" ", "")
 
-print mD_rspaces
+
+product = 0
+greatest_product = 0
+for d in range(len(mD_rspaces)):
+    a = mD_rspaces[d:d + 13]
+    product = reduce(lambda x, y: x * y, [int(x) for x in a])
+    greatest_product = product if product > greatest_product else greatest_product
+    if len(a) != 13:
+        break
