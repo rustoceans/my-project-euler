@@ -57,6 +57,10 @@ born_string = """
               01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48
               """
 
+"""
+The under it's avoiding conflicts with reserved commands.
+"""
+
 string_ = filter(None, re.split('[\n ]', born_string))
 
 print string_
