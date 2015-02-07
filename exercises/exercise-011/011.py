@@ -35,16 +35,38 @@ What is the greatest product of four adjacent numbers in any direction
 import re
 
 
-with open('grid.txt', 'r') as f:
-    grid = [[x] for x in f]
+def read_right_grid(string):
     """
-    The under it's avoiding conflicts with reserved commands.
+    why great_pr = 0?
+    UnboundLocalError: local variable 'great_pr'
+    referenced before assignment
     """
-    string_ = [filter(None, re.split('[\n ]', x))
-               for indice in range(20) for x in grid[indice]]
+    great_pr = 0
+    for row in range(20):
+        for col in range(20):
+            numerators = string[row][col:col + 4]
+            if len(numerators) == 4:
+                product = reduce(
+                    lambda x, y: x * y, [int(numerator)
+                                         for numerator in numerators])
+                great_pr = product if \
+                    product > great_pr else great_pr
+    return great_pr
 
 
-print string_
+def main():
+    with open('grid.txt', 'r') as f:
+        grid = [[x] for x in f]
+        """
+        The under it's avoiding conflicts with reserved commands.
+        """
+        string_ = [filter(None, re.split('[\n ]', x))
+                   for indice in range(20) for x in grid[indice]]
+
+    return read_right_grid(string_)
+
+
+print main()
 
 """
 Code refactory!
