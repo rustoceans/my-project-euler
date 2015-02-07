@@ -36,13 +36,23 @@ import re
 import numpy
 
 
+def _getNumtrs(list_, divide):
+    return [list_[i:i+divide] for i in range(0, len(list_), divide)]
+
+
 def read_down_grid(*args):
     string = numpy.array(args[0])
     great_pr = args[1]
     great_pd = 0
     for col in range(20):
         each_col = string[:, col]
-    return each_col
+        numerators = _getNumtrs(each_col, 4)
+        for numerator in numerators:
+            product = reduce(
+                    lambda x, y: x * y, [int(item)
+                                         for item in numerator])
+
+    return product
 
 
 def read_right_grid(string):
