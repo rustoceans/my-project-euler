@@ -33,6 +33,16 @@ What is the greatest product of four adjacent numbers in any direction
 """
 
 import re
+import numpy
+
+
+def read_down_grid(*args):
+    string = numpy.array(args[0])
+    great_pr = args[1]
+    great_pd = 0
+    for col in range(20):
+        each_col = string[:, col]
+    return each_col
 
 
 def read_right_grid(string):
@@ -51,7 +61,7 @@ def read_right_grid(string):
                                          for numerator in numerators])
                 great_pr = product if \
                     product > great_pr else great_pr
-    return great_pr
+    return read_down_grid(string, great_pr)
 
 
 def main():
