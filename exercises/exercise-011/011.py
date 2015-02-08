@@ -42,6 +42,13 @@ def _getNumtrs(list_, n_adjacent):
             if len(list_[x:x + n_adjacent]) == n_adjacent]
 
 
+def read_diagonally(*args):
+    string = args[0]
+    great_product = args[1]
+    diags = [string[::-1, :].diagonal(i) for i in range(-19, 20)]
+    return diags
+
+
 def read_down_grid(*args):
     string = numpy.array(args[0])
     great_product = args[1]
@@ -55,7 +62,7 @@ def read_down_grid(*args):
             great_product = product \
                 if product > great_product else great_product
 
-    return great_product
+    return read_diagonally(string, great_product)
 
 
 def read_right_grid(string):
