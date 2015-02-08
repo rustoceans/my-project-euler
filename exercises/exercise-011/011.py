@@ -47,7 +47,7 @@ def read_diagonally(*args):
     great_product = args[1]
     diags = [string[::-1, :].diagonal(i) for i in range(-19, 20)]
     diags.extend(string.diagonal(i) for i in range(19, -20, -1))
-    numerators = [n.tolist() for n in diags]
+    numerators = [n.tolist() for n in diags if len(n.tolist()) >= 4]
     return numerators
 
 
