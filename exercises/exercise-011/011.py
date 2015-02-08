@@ -46,7 +46,9 @@ def read_diagonally(*args):
     string = args[0]
     great_product = args[1]
     diags = [string[::-1, :].diagonal(i) for i in range(-19, 20)]
-    return diags
+    diags.extend(string.diagonal(i) for i in range(19, -20, -1))
+    numerators = [n.tolist() for n in diags]
+    return numerators
 
 
 def read_down_grid(*args):
