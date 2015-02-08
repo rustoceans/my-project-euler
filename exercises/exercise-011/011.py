@@ -45,10 +45,21 @@ def _getNumtrs(list_, n_adjacent):
 def read_diagonally(*args):
     string = args[0]
     great_product = args[1]
-    diags = [string[::-1, :].diagonal(i) for i in range(-19, 20)]
-    diags.extend(string.diagonal(i) for i in range(19, -20, -1))
-    numerators = [n.tolist() for n in diags if len(n.tolist()) >= 4]
-    return numerators
+    diags = [string[::-1, :].diagonal(i)
+             for i in range(-19, 20) if len(string[::-1, :].diagonal(i)) >= 4]
+    diags.extend(string.diagonal(i)
+                 for i in range(19, -20, -1) if len(string.diagonal(i)) >= 4)
+    for list_ in diags:
+        numerators = _getNumtrs(list_, 4)
+        for items in numerators:
+            product = reduce(
+                lambda x, y: x * y, [
+                    int(item)
+                    for item in items
+                ])
+            great_product = product\
+                if product > great_product else great_product
+    return great_product
 
 
 def read_down_grid(*args):
