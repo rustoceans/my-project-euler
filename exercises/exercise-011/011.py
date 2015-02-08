@@ -37,12 +37,18 @@ import numpy
 
 
 def _getNumtrs(list_, n_adjacent):
+    """
+    Static method to generate list of four adjacent numbers.
+    """
     return [list_[x:x + n_adjacent]
             for x in range(len(list_))
             if len(list_[x:x + n_adjacent]) == n_adjacent]
 
 
 def read_diagonally(*args):
+    """
+    Reading the Grid in your diagonal mode.
+    """
     string = args[0]
     great_product = args[1]
     diags = [string[::-1, :].diagonal(i)
@@ -63,6 +69,9 @@ def read_diagonally(*args):
 
 
 def read_down_grid(*args):
+    """
+    Interesting case for this: reading the grid for down or up, it's equals.
+    """
     string = numpy.array(args[0])
     great_product = args[1]
     for col in range(20):
@@ -109,7 +118,8 @@ def main():
     return read_right_grid(string_)
 
 
-print main()
+if __name__ == '__main__':
+    print main()
 
 """
 Code refactory!
@@ -119,5 +129,4 @@ with open('grid.txt', 'r') as f:
     for i in range(19):
         for x in grid[i]:
             string_.append(filter(None, re.split('[\n ]', x)))
-
 """
