@@ -26,3 +26,9 @@ divisors?
 """
 
 
+def main():
+    return "I am main function!"
+
+
+if __name__ == '__main__':
+    return main()
