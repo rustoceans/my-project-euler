@@ -25,10 +25,15 @@ What is the value of the first triangle number to have over five hundred
 divisors?
 """
 
+"""
+First, I will find the result for each triangle number until it finds...
+"""
 
-def main():
-    return "I am main function!"
+
+def main(triangle_number):
+    return sum([t_number
+                for t_number in range(1, triangle_number + 1)])
 
 
 if __name__ == '__main__':
-    return main()
+    print main(triangle_number=7)
