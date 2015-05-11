@@ -31,9 +31,13 @@ First, I will find the result for each triangle number until it finds...
 
 
 def main(triangle_number):
+    """
+    Now, this finction return latest/7th triangle number and after
+    one should get the structure of predecessors numbers and find
+    the amount of dividers. that's it!
+    """
     return sum([t_number
                 for t_number in range(1, triangle_number + 1)])
-
 
 if __name__ == '__main__':
     print main(triangle_number=7)
