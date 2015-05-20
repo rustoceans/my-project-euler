@@ -25,19 +25,16 @@ What is the value of the first triangle number to have over five hundred
 divisors?
 """
 
-"""
-First, I will find the result for each triangle number until it finds...
-"""
+
+def factors(n):
+    """Finds all factors from a number"""
+    return set(reduce(list.__add__,
+                      ([i, n // i]
+                       for i in range(1, int(n**0.5) + 1) if n % i == 0)))
 
 
 def main(triangle_number):
-    """
-    Now, this finction return latest/7th triangle number and after
-    one should get the structure of predecessors numbers and find
-    the amount of dividers. that's it!
-    """
-    return sum([t_number
-                for t_number in range(1, triangle_number + 1)])
+    return factors(triangle_number)
 
 if __name__ == '__main__':
-    print main(triangle_number=7)
+    print main(triangle_number=28)
