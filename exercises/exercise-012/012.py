@@ -26,15 +26,33 @@ divisors?
 """
 
 
+def triangle_number(n):
+    """ return the triangle number to get the amount of factors number """
+    const = 1
+    denominator = 2
+    return n * (n + const) / denominator
+
+
+def numbers():
+    """ Generate an infinite sequence of numbers """
+    i = 1
+    while True:
+        yield i
+        i += 1
+
+
 def factors(n):
-    """Finds all factors from a number"""
-    return set(reduce(list.__add__,
-                      ([i, n // i]
-                       for i in range(1, int(n**0.5) + 1) if n % i == 0)))
+    """ Finds all factors from a number """
+    return len(set(reduce(list.__add__, ([i, n // i] for i in range(1, int(n**0.5) + 1) if n % i == 0))))
 
 
-def main(triangle_number):
-    return factors(triangle_number)
+def main():
+    """ return the triangle number that have amout numbert >= 500 """
+    for number in numbers():
+        t_n = triangle_number(number)
+        amt_divisor = factors(t_n)
+        if amt_divisor >= 500:
+            return t_n
 
 if __name__ == '__main__':
-    print main(triangle_number=28)
+    print main()
