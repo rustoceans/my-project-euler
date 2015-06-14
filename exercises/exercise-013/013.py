@@ -107,4 +107,20 @@ Work out the first ten digits of the sum of the following one-hundred
             53503534226472524250874054075591789781264330331690
 """
 
+import operator
 
+
+def get_all_numbers(file_):
+    with open(file_, 'r') as f:
+        return [int(n.replace("\n", "")) for n in f]
+
+
+def main():
+    mtx_number = 'numbers.txt'
+    numbers = get_all_numbers(mtx_number)
+    sum_number = str(reduce(operator.add, numbers))
+    return sum_number[:10]
+
+
+if __name__ == '__main__':
+    print main()
