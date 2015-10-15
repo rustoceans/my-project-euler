@@ -23,6 +23,9 @@ NOTE: Once the chain starts the terms are allowed to go above one million.
 
 
 def _is_even(n):
+    """
+    Just return a boolean value if the number is or isn't even.
+    """
     even = False
     if n % 2 == 0:
         even = True
@@ -30,6 +33,9 @@ def _is_even(n):
 
 
 def main(n):
+    """
+    THE MAIN FUNCTION
+    """
     return _is_even(n)
 
 
