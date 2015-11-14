@@ -22,21 +22,23 @@ NOTE: Once the chain starts the terms are allowed to go above one million.
 """
 
 
-def _is_even(n):
+class Chain(object):
     """
-    Just return a boolean value if the number is or isn't even.
+    Calculates the longest chain started by one million
     """
-    even = False
-    if n % 2 == 0:
-        even = True
-    return even
+    def __init__(self, number):
+        self.number = number
+
+    @staticmethod
+    def even(num):
+        """
+        Just return a boolean value if the number is or isn't even.
+        """
+        return True if num % 2 == 0 else False
 
 
 def main(n):
-    """
-    THE MAIN FUNCTION
-    """
-    return _is_even(n)
+    return Chain.even(n)
 
 
 if __name__ == '__main__':
