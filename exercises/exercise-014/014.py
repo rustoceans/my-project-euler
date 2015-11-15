@@ -28,6 +28,7 @@ class Chain(object):
     """
     def __init__(self, number):
         self.number = number
+        self.list_ = range(1000000)
 
     @staticmethod
     def even(num):
@@ -36,9 +37,20 @@ class Chain(object):
         """
         return True if num % 2 == 0 else False
 
+    @staticmethod
+    def numbers():
+        """ Generate an infinite sequence of numbers """
+        i = 1
+        while True and i < 1000000:
+            yield i
+            i += 1
+
+    def get_list(self):
+        return [n for n in self.numbers()]
+
 
 def main(n):
-    return Chain.even(n)
+    return Chain(n).get_list()
 
 
 if __name__ == '__main__':
