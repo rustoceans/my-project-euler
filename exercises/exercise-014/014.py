@@ -28,30 +28,40 @@ class Chain(object):
     """
     def __init__(self, number):
         self.number = number
-        self.list_ = range(1000000)
 
     @staticmethod
-    def even(num):
+    def is_even(num):
         """
         Just return a boolean value if the number is or isn't even.
         """
         return True if num % 2 == 0 else False
 
     @staticmethod
-    def numbers():
-        """ Generate an infinite sequence of numbers """
-        i = 1
-        while True and i < 1000000:
+    def numbers(range_):
+        """
+        Generate an infinite sequence of numbers
+        """
+        i = range_
+        while i <= range_ and i > 1:
             yield i
-            i += 1
+            i -= 1
 
-    def get_list(self):
-        return [n for n in self.numbers()]
+    def get_chains(self):
+        chain = []
+        chain.append(self.number)
+        while chain[-1] > 1:
+            if self.is_even(chain[-1]):
+                n_chain = chain[-1]/2
+                chain.append(n_chain)
+            else:
+                n_chain = (3*chain[-1]) + 1
+                chain.append(n_chain)
+        return chain
 
 
 def main(n):
-    return Chain(n).get_list()
+    return Chain(n).get_chains()
 
 
 if __name__ == '__main__':
-    print main(4)
+    print main(13)
