@@ -29,6 +29,22 @@ class Chain(object):
     def __init__(self, number):
         self.number = number
 
+    def get_chain(self, num):
+        chain = []
+        chain.append(num)
+        while chain[-1] > 1:
+            if self.is_even(chain[-1]):
+                n_chain = chain[-1]/2
+                chain.append(n_chain)
+            else:
+                n_chain = (3*chain[-1]) + 1
+                chain.append(n_chain)
+        return chain
+
+    @staticmethod
+    def get_chains_ordered(chains):
+        return sorted(chains, key=lambda num: len(chains[num]), reverse=True)
+
     @staticmethod
     def is_even(num):
         """
@@ -39,7 +55,7 @@ class Chain(object):
     @staticmethod
     def numbers(range_):
         """
-        Generate an infinite sequence of numbers
+        Generate a sequence of numbers
         """
         i = range_
         while i <= range_ and i > 1:
@@ -47,16 +63,14 @@ class Chain(object):
             i -= 1
 
     def get_chains(self):
-        chain = []
-        chain.append(self.number)
-        while chain[-1] > 1:
-            if self.is_even(chain[-1]):
-                n_chain = chain[-1]/2
-                chain.append(n_chain)
-            else:
-                n_chain = (3*chain[-1]) + 1
-                chain.append(n_chain)
-        return chain
+        chains = {}
+        for n in self.numbers(self.number):
+            chains[n] = self.get_chain(n)
+            longest_key = self.get_chains_ordered(chains)[0]
+            for key in chains.keys():
+                if key != longest_key:
+                    del chains[key]
+        return longest_key
 
 
 def main(n):
@@ -64,4 +78,4 @@ def main(n):
 
 
 if __name__ == '__main__':
-    print main(13)
+    print main(1000000)
