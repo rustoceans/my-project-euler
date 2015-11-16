@@ -5,7 +5,7 @@ Hey there!
 
 These are my solutions of [EulerPy].
 
-A programmer is the same as a musician, we must practice everyday!
+A programmer is like a musician, we have to practice it everyday to be better!
 
 ![2015-10-22 11_35_09](http://blog.pgi.com/wp-content/uploads/2013/02/jim-carey.gif)
 
