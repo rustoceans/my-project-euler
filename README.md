@@ -1,7 +1,7 @@
 Logical Exercises
 ================
 
-Hey there!
+Hey there! :smile:
 
 These are my solutions of [EulerPy].
 
