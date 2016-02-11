@@ -7,5 +7,10 @@ def main(arg1):
     (without backtracking) to the bottom right corner.
 
     How many routes are there through a 20 * 20 grid?
+
+    There is a good article with the better explanation of it bellow:
+    
+    Article link:
+    http://betterexplained.com/articles/navigate-a-grid-using-combinations-and-permutations/
     """
     pass
