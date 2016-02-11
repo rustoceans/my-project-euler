@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 """
 File: 015.py
 Author: Alexsander Falcucci
@@ -23,3 +26,7 @@ def main(arg1):
     http://betterexplained.com/articles/navigate-a-grid-using-combinations-and-permutations/
     """
     pass
+
+
+if __name__ == "__main__":
+    main()
