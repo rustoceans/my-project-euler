@@ -10,7 +10,7 @@ Description: Resolution of 15º euler exercise
 """
 
 
-def main(arg1):
+def main():
     """
     Project Euler Problem 15
     ========================
@@ -22,7 +22,7 @@ def main(arg1):
 
     There is a good article with the better explanation of it bellow:
     
-    Article linkhttp://betterexplained.com/articles/navigate-a-grid-using-combinations-and-permutations/:
+    Article link:
     http://betterexplained.com/articles/navigate-a-grid-using-combinations-and-permutations/
     """
     pass
@@ -30,3 +30,5 @@ def main(arg1):
 
 if __name__ == "__main__":
     main()
+
+    
