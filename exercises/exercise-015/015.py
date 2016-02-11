@@ -23,7 +23,7 @@ def main():
     There is a good article with the better explanation of it bellow:
     
     Article link:
-    http://betterexplained.com/articles/navigate-a-grid-using-combinations-and-permutations/
+        http://betterexplained.com/articles/navigate-a-grid-using-combinations-and-permutations/
     """
     pass
 
