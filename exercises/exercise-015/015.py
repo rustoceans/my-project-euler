@@ -6,11 +6,11 @@ File: 015.py
 Author: Alexsander Falcucci
 Email: alex.falcucci@gmail.com
 Github: https://github.com/alexfalcucc
-Description: Resolution of 15º euler exercise 
+Description: Resolution of 15º euler exercise
 """
 
 
-def main():
+def get_routes(*args):
     """
     Project Euler Problem 15
     ========================
@@ -21,14 +21,21 @@ def main():
     How many routes are there through a 20 * 20 grid?
 
     There is a good article with the better explanation of it bellow:
-    
+
     Article link:
         http://betterexplained.com/articles/navigate-a-grid-using-combinations-and-permutations/
+    link with the formula: http://joaoff.com/2008/01/20/a-square-grid-path-problem/
     """
-    pass
+    top = args[0]
+    left = args[1]
+    forty_factorial = reduce(lambda x, y: x * y, range(1, 41))
+    list_ = range(1, 21)
+    twenty__factorial = reduce(lambda x, y: x * y, list_)
+    print forty_factorial/(twenty__factorial * twenty__factorial)
+    return True
 
 
 if __name__ == "__main__":
-    main()
+    get_routes(20, 20)
 
-    
+
