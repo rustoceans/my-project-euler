@@ -1,3 +1,12 @@
+"""
+File: 015.py
+Author: Alexsander Falcucci
+Email: alex.falcucci@gmail.com
+Github: https://github.com/alexfalcucc
+Description: Resolution of 15º euler exercise 
+"""
+
+
 def main(arg1):
     """
     Project Euler Problem 15
@@ -10,7 +19,7 @@ def main(arg1):
 
     There is a good article with the better explanation of it bellow:
     
-    Article link:
+    Article linkhttp://betterexplained.com/articles/navigate-a-grid-using-combinations-and-permutations/:
     http://betterexplained.com/articles/navigate-a-grid-using-combinations-and-permutations/
     """
     pass
